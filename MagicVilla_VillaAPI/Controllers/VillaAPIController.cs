@@ -11,12 +11,10 @@ namespace MagicVilla_VillaAPI.Controllers;
 [ApiController]
 public class VillaAPIController : ControllerBase
 {
-
     public VillaAPIController()
     {
 
     }
-    
     
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]

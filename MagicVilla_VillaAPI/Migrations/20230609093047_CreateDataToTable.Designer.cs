@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MagicVilla_VillaAPI.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230608144414_AddVillaTable")]
-    partial class AddVillaTable
+    [Migration("20230609093047_CreateDataToTable")]
+    partial class CreateDataToTable
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,8 +33,9 @@ namespace MagicVilla_VillaAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Amenity")
-                        .HasColumnType("int");
+                    b.Property<string>("Amenity")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
@@ -43,8 +44,9 @@ namespace MagicVilla_VillaAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ImageUrl")
-                        .HasColumnType("int");
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -65,6 +67,34 @@ namespace MagicVilla_VillaAPI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Villas");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Amenity = "",
+                            CreatedDate = new DateTime(2023, 6, 9, 12, 30, 47, 98, DateTimeKind.Local).AddTicks(6396),
+                            Details = "Great place",
+                            ImageUrl = "https://dotnetmasteryimages.blob.core.windows.net/bluevillaimages/villa3.jpg",
+                            Name = "Royal Villa",
+                            Occupancy = 5,
+                            Rate = 200.0,
+                            Sqft = 550,
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Amenity = "",
+                            CreatedDate = new DateTime(2023, 6, 9, 12, 30, 47, 98, DateTimeKind.Local).AddTicks(6445),
+                            Details = "Happy place",
+                            ImageUrl = "https://dotnetmasteryimages.blob.core.windows.net/bluevillaimages/villa2.jpg",
+                            Name = "Diamond Villa",
+                            Occupancy = 4,
+                            Rate = 600.0,
+                            Sqft = 1100,
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        });
                 });
 #pragma warning restore 612, 618
         }

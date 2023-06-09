@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace MagicVilla_VillaAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class AddVillaTable : Migration
+    public partial class AddVillaToTable : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -22,7 +22,7 @@ namespace MagicVilla_VillaAPI.Migrations
                     Rate = table.Column<double>(type: "float", nullable: false),
                     Sqft = table.Column<int>(type: "int", nullable: false),
                     Occupancy = table.Column<int>(type: "int", nullable: false),
-                    ImageUrl = table.Column<int>(type: "int", nullable: false),
+                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Amenity = table.Column<int>(type: "int", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
@@ -31,6 +31,11 @@ namespace MagicVilla_VillaAPI.Migrations
                 {
                     table.PrimaryKey("PK_Villas", x => x.Id);
                 });
+
+            migrationBuilder.InsertData(
+                table: "Villas",
+                columns: new[] { "Id", "Amenity", "CreatedDate", "Details", "ImageUrl", "Name", "Occupancy", "Rate", "Sqft", "UpdatedDate" },
+                values: new object[] { 1, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Great place", "", "Royal Villa", 0, 0.0, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) });
         }
 
         /// <inheritdoc />
