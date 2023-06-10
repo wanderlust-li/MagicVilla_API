@@ -142,7 +142,7 @@ public class VillaAPIController : ControllerBase
         if (villa == null)
             return BadRequest();
         patchDTO.ApplyTo(villaDto, ModelState);
-        
+         
         Villa model = new()
         {
             Amenity = villaDto.Amenity,
