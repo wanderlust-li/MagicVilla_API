@@ -60,20 +60,10 @@ public class VillaAPIController : ControllerBase
             return BadRequest(ModelState);
         }
         if (createDto == null)
-            return BadRequest();
+            return BadRequest(createDto);
 
         Villa model = _mapper.Map<Villa>(createDto);
         
-        // Villa model = new()
-        // {
-        //     Amenity = createDto.Amenity,
-        //     Details = createDto.Details,
-        //     ImageUrl = createDto.ImageUrl,
-        //     Name = createDto.Name,
-        //     Occupancy = createDto.Occupancy,
-        //     Rate = createDto.Rate,
-        //     Sqft = createDto.Sqft
-        // };
         await _dbVilla.CreateAsync(model);
 
         return CreatedAtRoute("GetVilla", new {id = model.Id},model);
