@@ -1,30 +1,11 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {
-      "MagicVilla_Utility/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "compile": {
-          "bin/placeholder/MagicVilla_Utility.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/MagicVilla_Utility.dll": {}
-        }
-      }
-    }
+    "net7.0": {}
   },
-  "libraries": {
-    "MagicVilla_Utility/1.0.0": {
-      "type": "project",
-      "path": "../MagicVilla_Utility/MagicVilla_Utility.csproj",
-      "msbuildProject": "../MagicVilla_Utility/MagicVilla_Utility.csproj"
-    }
-  },
+  "libraries": {},
   "projectFileDependencyGroups": {
-    "net7.0": [
-      "MagicVilla_Utility >= 1.0.0"
-    ]
+    "net7.0": []
   },
   "packageFolders": {
     "C:\\Users\\user\\.nuget\\packages\\": {}
@@ -32,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\MagicVilla\\MagicVilla_Web\\MagicVilla_Web.csproj",
-      "projectName": "MagicVilla_Web",
-      "projectPath": "D:\\MagicVilla\\MagicVilla_Web\\MagicVilla_Web.csproj",
+      "projectUniqueName": "D:\\MagicVilla\\MagicVilla_Utility\\MagicVilla_Utility.csproj",
+      "projectName": "MagicVilla_Utility",
+      "projectPath": "D:\\MagicVilla\\MagicVilla_Utility\\MagicVilla_Utility.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "D:\\MagicVilla\\MagicVilla_Web\\obj\\",
+      "outputPath": "D:\\MagicVilla\\MagicVilla_Utility\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -52,11 +33,7 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {
-            "D:\\MagicVilla\\MagicVilla_Utility\\MagicVilla_Utility.csproj": {
-              "projectPath": "D:\\MagicVilla\\MagicVilla_Utility\\MagicVilla_Utility.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
@@ -80,9 +57,6 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
