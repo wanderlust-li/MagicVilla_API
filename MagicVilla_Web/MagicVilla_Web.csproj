@@ -8,6 +8,12 @@
 
     <ItemGroup>
       <ProjectReference Include="..\MagicVilla_Utility\MagicVilla_Utility.csproj" />
+      <ProjectReference Include="..\MagicVilla_VillaAPI\MagicVilla_VillaAPI.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="12.0.1" />
+      <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     </ItemGroup>
 
 </Project>

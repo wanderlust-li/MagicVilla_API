@@ -29,3 +29,6 @@ D:\MagicVilla\MagicVilla_Web\obj\Debug\net7.0\refint\MagicVilla_Web.dll
 D:\MagicVilla\MagicVilla_Web\obj\Debug\net7.0\MagicVilla_Web.pdb
 D:\MagicVilla\MagicVilla_Web\obj\Debug\net7.0\MagicVilla_Web.genruntimeconfig.cache
 D:\MagicVilla\MagicVilla_Web\obj\Debug\net7.0\ref\MagicVilla_Web.dll
+D:\MagicVilla\MagicVilla_Web\bin\Debug\net7.0\MagicVilla_Utility.dll
+D:\MagicVilla\MagicVilla_Web\bin\Debug\net7.0\MagicVilla_Utility.pdb
+D:\MagicVilla\MagicVilla_Web\obj\Debug\net7.0\MagicVilla_Web.csproj.CopyComplete

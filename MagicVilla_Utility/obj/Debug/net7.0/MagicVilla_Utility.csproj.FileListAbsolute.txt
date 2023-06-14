@@ -1,0 +1,12 @@
+D:\MagicVilla\MagicVilla_Utility\bin\Debug\net7.0\MagicVilla_Utility.deps.json
+D:\MagicVilla\MagicVilla_Utility\bin\Debug\net7.0\MagicVilla_Utility.dll
+D:\MagicVilla\MagicVilla_Utility\bin\Debug\net7.0\MagicVilla_Utility.pdb
+D:\MagicVilla\MagicVilla_Utility\obj\Debug\net7.0\MagicVilla_Utility.csproj.AssemblyReference.cache
+D:\MagicVilla\MagicVilla_Utility\obj\Debug\net7.0\MagicVilla_Utility.GeneratedMSBuildEditorConfig.editorconfig
+D:\MagicVilla\MagicVilla_Utility\obj\Debug\net7.0\MagicVilla_Utility.AssemblyInfoInputs.cache
+D:\MagicVilla\MagicVilla_Utility\obj\Debug\net7.0\MagicVilla_Utility.AssemblyInfo.cs
+D:\MagicVilla\MagicVilla_Utility\obj\Debug\net7.0\MagicVilla_Utility.csproj.CoreCompileInputs.cache
+D:\MagicVilla\MagicVilla_Utility\obj\Debug\net7.0\MagicVilla_Utility.dll
+D:\MagicVilla\MagicVilla_Utility\obj\Debug\net7.0\refint\MagicVilla_Utility.dll
+D:\MagicVilla\MagicVilla_Utility\obj\Debug\net7.0\MagicVilla_Utility.pdb
+D:\MagicVilla\MagicVilla_Utility\obj\Debug\net7.0\ref\MagicVilla_Utility.dll

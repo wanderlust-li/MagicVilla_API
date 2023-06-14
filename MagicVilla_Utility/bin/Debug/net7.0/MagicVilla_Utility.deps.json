@@ -6,14 +6,6 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v7.0": {
-      "MagicVilla_Web/1.0.0": {
-        "dependencies": {
-          "MagicVilla_Utility": "1.0.0"
-        },
-        "runtime": {
-          "MagicVilla_Web.dll": {}
-        }
-      },
       "MagicVilla_Utility/1.0.0": {
         "runtime": {
           "MagicVilla_Utility.dll": {}
@@ -22,11 +14,6 @@
     }
   },
   "libraries": {
-    "MagicVilla_Web/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
     "MagicVilla_Utility/1.0.0": {
       "type": "project",
       "serviceable": false,
