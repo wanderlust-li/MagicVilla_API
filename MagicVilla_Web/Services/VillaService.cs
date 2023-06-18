@@ -16,6 +16,7 @@ public class VillaService : BaseService, IVillaService
         villaUrl = configuration.GetValue<string>("ServiceUrls:VillaAPI");
     }
 
+    
     public Task<T> GetAllAsync<T>()
     {
         return SendAsync<T>(new APIRequest()
