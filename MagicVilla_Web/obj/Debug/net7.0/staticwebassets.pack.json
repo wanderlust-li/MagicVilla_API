@@ -17,6 +17,18 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\MagicVilla\\MagicVilla_Web\\wwwroot\\images\\home\\confirmation.jpg",
+      "PackagePath": "staticwebassets\\images\\home\\confirmation.jpg"
+    },
+    {
+      "Id": "D:\\MagicVilla\\MagicVilla_Web\\wwwroot\\images\\home\\slide1.jpg",
+      "PackagePath": "staticwebassets\\images\\home\\slide1.jpg"
+    },
+    {
+      "Id": "D:\\MagicVilla\\MagicVilla_Web\\wwwroot\\images\\home\\slide2.jpg",
+      "PackagePath": "staticwebassets\\images\\home\\slide2.jpg"
+    },
+    {
       "Id": "D:\\MagicVilla\\MagicVilla_Web\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
