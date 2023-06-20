@@ -92,13 +92,13 @@ public class VillaNumberAPIController : ControllerBase
         {
             if (await _dbVillaNumber.GetAsync(u => u.VillaNo == createDto.VillaNo) != null)
             {
-                ModelState.AddModelError("CustomError", "Villa Number already Exists!");
+                ModelState.AddModelError("ErrorMessages", "Villa Number already Exists!");
                 return BadRequest(ModelState);
             }
 
             if (await _dbVilla.GetAsync(u => u.Id == createDto.VillaId) == null)
             {
-                ModelState.AddModelError("CustomError", "Villa Number already Exists!");
+                ModelState.AddModelError("ErrorMessages", "Villa Number already Exists!");
                 return BadRequest(ModelState);
             }
             
@@ -163,7 +163,7 @@ public class VillaNumberAPIController : ControllerBase
             
             if (await _dbVilla.GetAsync(u => u.Id == updateDto.VillaId) == null)
             {
-                ModelState.AddModelError("CustomError", "Villa Number already Exists!");
+                ModelState.AddModelError("ErrorMessages", "Villa Number already Exists!");
                 return BadRequest(ModelState);
             }
             

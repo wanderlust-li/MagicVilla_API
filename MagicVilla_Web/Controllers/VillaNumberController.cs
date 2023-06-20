@@ -68,6 +68,17 @@ public class VillaNumberController : Controller
             }
         }
 
+        var resp = await _villaNumberService.GetAllAsync<APIResponse>();
+        if (resp != null && resp.IsSuccess)
+        {
+            model.VillaList = JsonConvert.DeserializeObject<List<VillaDTO>>(Convert.ToString(resp.Result))
+                .Select(i => new SelectListItem
+                {
+                    Text = i.Name,
+                    Value = i.Id.ToString()
+                });
+        }
+
         return View(model);
     }
 

@@ -9,7 +9,7 @@ namespace MagicVilla_Web.Services;
 public class BaseService : IBaseService
 {
     public APIResponse responseModel { get; set; }
-    
+
     public IHttpClientFactory httpClient { get; set; }
 
     public BaseService(IHttpClientFactory httpClient)
@@ -17,6 +17,7 @@ public class BaseService : IBaseService
         this.responseModel = new();
         this.httpClient = httpClient;
     }
+
     public async Task<T> SendAsync<T>(APIRequest apiRequest)
     {
         try
@@ -30,6 +31,7 @@ public class BaseService : IBaseService
                 message.Content = new StringContent(JsonConvert.SerializeObject(apiRequest.Data),
                     Encoding.UTF8, "application/json");
             }
+
             switch (apiRequest.ApiType)
             {
                 case SD.ApiType.POST:
@@ -48,14 +50,15 @@ public class BaseService : IBaseService
 
             HttpResponseMessage apiResponse = null;
 
+
             apiResponse = await client.SendAsync(message);
 
             var apiContent = await apiResponse.Content.ReadAsStringAsync();
             try
             {
                 APIResponse ApiResponse = JsonConvert.DeserializeObject<APIResponse>(apiContent);
-                if( ApiResponse!=null &&( apiResponse.StatusCode==System.Net.HttpStatusCode.BadRequest 
-                                          || apiResponse.StatusCode == System.Net.HttpStatusCode.NotFound))
+                if (ApiResponse != null && (apiResponse.StatusCode == System.Net.HttpStatusCode.BadRequest
+                                            || apiResponse.StatusCode == System.Net.HttpStatusCode.NotFound))
                 {
                     ApiResponse.StatusCode = System.Net.HttpStatusCode.BadRequest;
                     ApiResponse.IsSuccess = false;
@@ -69,11 +72,11 @@ public class BaseService : IBaseService
                 var exceptionResponse = JsonConvert.DeserializeObject<T>(apiContent);
                 return exceptionResponse;
             }
+
             var APIResponse = JsonConvert.DeserializeObject<T>(apiContent);
             return APIResponse;
-
         }
-        catch(Exception e)
+        catch (Exception e)
         {
             var dto = new APIResponse
             {
