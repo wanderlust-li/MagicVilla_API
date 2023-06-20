@@ -5,9 +5,9 @@
         <div class="col">
             <h1 class="text-primary">Villa Number List</h1>
         </div>
-        <div class="col text-end pt-1">
-            <a asp-controller="VillaNumber" asp-action="CreateVillaNumber" class="btn btn-outline-primary"><i class="bi bi-plus-square-fill"></i> Create New Villa Number</a>
-        </div>
+        @* <div class="col text-end pt-1"> *@
+        @*     <a asp-controller="VillaNumber" asp-action="CreateVillaNumber" class="btn btn-outline-primary"><i class="bi bi-plus-square-fill"></i> Create New Villa Number</a> *@
+        @* </div> *@
     </div>
 
     <table class="table">
@@ -27,10 +27,10 @@
             <tr>
                 <td>@item.Villa.Name</td>
                 <td>@item.VillaNo</td>
-                <td>
-                    <a asp-controller="VillaNumber" asp-action="UpdateVillaNumber" asp-route-villaNo="@item.VillaNo" class="btn btn-success"><i class="bi bi-pencil-square"></i></a>
-                    <a asp-controller="VillaNumber" asp-action="DeleteVillaNumber" asp-route-villaNo="@item.VillaNo" class="btn btn-danger"><i class="bi bi-trash-fill"></i></a>
-                </td>
+                @* <td> *@
+                @*     <a asp-controller="VillaNumber" asp-action="UpdateVillaNumber" asp-route-villaNo="@item.VillaNo" class="btn btn-success"><i class="bi bi-pencil-square"></i></a> *@
+                @*     <a asp-controller="VillaNumber" asp-action="DeleteVillaNumber" asp-route-villaNo="@item.VillaNo" class="btn btn-danger"><i class="bi bi-trash-fill"></i></a> *@
+                @* </td> *@
             </tr>
         }
         </tbody>
