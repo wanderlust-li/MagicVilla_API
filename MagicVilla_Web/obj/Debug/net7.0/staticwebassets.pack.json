@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\MagicVilla_Web.bundle.scp.css"
     },
     {
+      "Id": "D:\\MagicVilla\\MagicVilla_Web\\wwwroot\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.css"
+    },
+    {
       "Id": "D:\\MagicVilla\\MagicVilla_Web\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

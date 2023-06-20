@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "D+qUoH/OOKCNUAW4HRdolB24z5DlIG38d0CyGMO9MNI=",
+  "Hash": "WQRwrruPvRSQ2yYcRbEd04hKPQYgGu8A5AzN7B8lZQ0=",
   "Source": "MagicVilla_Web",
   "BasePath": "_content/MagicVilla_Web",
   "Mode": "Default",
@@ -61,6 +61,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\MagicVilla\\MagicVilla_Web\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\MagicVilla_Web.bundle.scp.css"
+    },
+    {
+      "Identity": "D:\\MagicVilla\\MagicVilla_Web\\wwwroot\\css\\bootstrap.css",
+      "SourceId": "MagicVilla_Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\MagicVilla\\MagicVilla_Web\\wwwroot\\",
+      "BasePath": "_content/MagicVilla_Web",
+      "RelativePath": "css/bootstrap.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\bootstrap.css"
     },
     {
       "Identity": "D:\\MagicVilla\\MagicVilla_Web\\wwwroot\\css\\site.css",
