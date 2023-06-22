@@ -90,3 +90,4 @@ D:\MagicVilla\MagicVilla_VillaAPI\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.
 D:\MagicVilla\MagicVilla_VillaAPI\bin\Debug\net7.0\AutoMapper.dll
 D:\MagicVilla\MagicVilla_VillaAPI\bin\Debug\net7.0\AutoMapper.Extensions.ExpressionMapping.dll
 D:\MagicVilla\MagicVilla_VillaAPI\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\MagicVilla\MagicVilla_VillaAPI\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
