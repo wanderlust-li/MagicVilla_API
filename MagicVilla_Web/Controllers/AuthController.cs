@@ -47,10 +47,10 @@ public class AuthController : Controller
         return View();
     }
 
-    public async Task<IActionResult> Logout()
-    {
-        return View();
-    }
+    // public async Task<IActionResult> Logout()
+    // {
+    //     return View();
+    // }
 
     public IActionResult AccessDenied()
     {
