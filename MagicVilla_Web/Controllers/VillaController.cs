@@ -2,6 +2,7 @@
 using MagicVilla_Web.Models;
 using MagicVilla_Web.Models.Dto;
 using MagicVilla_Web.Services.IServices;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
@@ -18,8 +19,8 @@ public class VillaController : Controller
         _villaService = villaService;
         _mapper = mapper;
     }
-    
-    
+
+
     // GET
     public async Task<IActionResult> IndexVilla()
     {
@@ -30,15 +31,16 @@ public class VillaController : Controller
         {
             list = JsonConvert.DeserializeObject<List<VillaDTO>>(Convert.ToString(response.Result));
         }
-        
+
         return View(list);
     }
-    
+
+    [Authorize(Roles = "admin")]
     public async Task<IActionResult> CreateVilla()
     {
         return View();
     }
-    
+
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> CreateVilla(VillaCreateDTO model)
@@ -52,11 +54,12 @@ public class VillaController : Controller
                 return RedirectToAction(nameof(IndexVilla));
             }
         }
+
         TempData["error"] = "Error encountered";
         return View(model);
     }
-    
-    
+
+
     public async Task<IActionResult> UpdateVilla(int villaId)
     {
         var response = await _villaService.GetAsync<APIResponse>(villaId);
@@ -69,7 +72,8 @@ public class VillaController : Controller
 
         return NotFound();
     }
-    
+
+    [Authorize(Roles = "admin")]
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> UpdateVilla(VillaUpdateDTO model)
@@ -82,11 +86,11 @@ public class VillaController : Controller
                 return RedirectToAction(nameof(IndexVilla));
             }
         }
-        
+
         return View(model);
     }
-    
-    
+
+    [Authorize(Roles = "admin")]
     public async Task<IActionResult> DeleteVilla(int villaId)
     {
         var response = await _villaService.GetAsync<APIResponse>(villaId);
@@ -98,19 +102,19 @@ public class VillaController : Controller
 
         return NotFound();
     }
-    
+
+    [Authorize(Roles = "admin")]
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> DeleteVilla(VillaDTO model)
     {
-        
-            var response = await _villaService.DeleteAsync<APIResponse>(model.Id);
-            if (response != null && response.IsSuccess)
-            {
-                TempData["success"] = "Villa deleted successfully";
-                return RedirectToAction(nameof(IndexVilla));
-            }
-        
+        var response = await _villaService.DeleteAsync<APIResponse>(model.Id);
+        if (response != null && response.IsSuccess)
+        {
+            TempData["success"] = "Villa deleted successfully";
+            return RedirectToAction(nameof(IndexVilla));
+        }
+
         TempData["error"] = "Error encountered";
         return View(model);
     }
