@@ -121,6 +121,25 @@
           }
         }
       },
+      "Microsoft.AspNetCore.Mvc.Versioning/5.1.0": {
+        "runtime": {
+          "lib/net6.0/Microsoft.AspNetCore.Mvc.Versioning.dll": {
+            "assemblyVersion": "5.1.0.0",
+            "fileVersion": "5.1.8270.41513"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer/5.1.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Versioning": "5.1.0"
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer.dll": {
+            "assemblyVersion": "5.1.0.0",
+            "fileVersion": "5.1.8270.41534"
+          }
+        }
+      },
       "Microsoft.AspNetCore.OpenApi/7.0.5": {
         "dependencies": {
           "Microsoft.OpenApi": "1.4.3"
@@ -856,6 +875,8 @@
           "Microsoft.AspNetCore.Authentication.JwtBearer": "7.0.5",
           "Microsoft.AspNetCore.JsonPatch": "7.0.5",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "7.0.5",
+          "Microsoft.AspNetCore.Mvc.Versioning": "5.1.0",
+          "Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer": "5.1.0",
           "Microsoft.AspNetCore.OpenApi": "7.0.5",
           "Microsoft.EntityFrameworkCore": "7.0.5",
           "Microsoft.EntityFrameworkCore.Relational": "7.0.5",
@@ -931,6 +952,20 @@
       "sha512": "sha512-zOhqXibiA14gy0rFkvvSp0BYnz3lsZ82R9vXJ3H+KCz+TXWIjP6wuqwc97bc00ppCB2oK4jQbii+q9phv18WAg==",
       "path": "microsoft.aspnetcore.mvc.newtonsoftjson/7.0.5",
       "hashPath": "microsoft.aspnetcore.mvc.newtonsoftjson.7.0.5.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Mvc.Versioning/5.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UX8w9BlCiZpr6Ox4YAve1w0CkI1CAovukGNzKd7v0+5pZc8lzuG5tRovucr1RWIKHs0E/Yx8563CN7KzaB3bpw==",
+      "path": "microsoft.aspnetcore.mvc.versioning/5.1.0",
+      "hashPath": "microsoft.aspnetcore.mvc.versioning.5.1.0.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer/5.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-p45pSXCJPbx+p9gFNNQPUC547KpqP5cRJke6aygq/M7UzCrJNmJNqD+65pIpY4muYbINqlgrC47h1oc0WbuP1g==",
+      "path": "microsoft.aspnetcore.mvc.versioning.apiexplorer/5.1.0",
+      "hashPath": "microsoft.aspnetcore.mvc.versioning.apiexplorer.5.1.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.OpenApi/7.0.5": {
       "type": "package",

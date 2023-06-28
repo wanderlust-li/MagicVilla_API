@@ -99,3 +99,5 @@ D:\MagicVilla\MagicVilla_Web\bin\Debug\net7.0\MagicVilla_VillaAPI.dll
 D:\MagicVilla\MagicVilla_Web\bin\Debug\net7.0\MagicVilla_VillaAPI.pdb
 D:\MagicVilla\MagicVilla_Web\obj\Debug\net7.0\MagicVilla_Web.MvcApplicationPartsAssemblyInfo.cs
 D:\MagicVilla\MagicVilla_Web\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\MagicVilla\MagicVilla_Web\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.Versioning.dll
+D:\MagicVilla\MagicVilla_Web\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer.dll
