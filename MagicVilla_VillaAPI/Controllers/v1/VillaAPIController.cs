@@ -1,4 +1,5 @@
 ﻿using System.Net;
+using System.Text.Json;
 using AutoMapper;
 using MagicVilla_VillaAPI.Data;
 using MagicVilla_VillaAPI.Models;
@@ -34,7 +35,7 @@ public class VillaAPIController : ControllerBase
     [ProducesResponseType(StatusCodes.Status401Unauthorized )]
     [ProducesResponseType(StatusCodes.Status200OK)]
     public async Task<ActionResult<APIResponse>> GetVillas([FromQuery(Name = "filterOccupancy")]int? occupancy,
-        [FromQuery]string? search, int pageSize = 2, int pageNumber = 1)
+        [FromQuery]string? search, int pageSize = 0, int pageNumber = 1)
     {
         try
         {
@@ -54,6 +55,10 @@ public class VillaAPIController : ControllerBase
             {
                 villaList = villaList.Where(u=>u.Name.ToLower().Contains(search));
             }
+
+            Pagination pagination = new() { PageNumber = pageNumber, PageSize = pageSize };
+            
+            Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(pagination));
             
             _response.Result = _mapper.Map<List<VillaDTO>>(villaList);
             _response.StatusCode = HttpStatusCode.OK;
