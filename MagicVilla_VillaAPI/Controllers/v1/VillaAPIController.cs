@@ -28,15 +28,26 @@ public class VillaAPIController : ControllerBase
     }
     
     [HttpGet]
+    [ResponseCache(CacheProfileName = "Default30")]
     // [Authorize]
     [ProducesResponseType(StatusCodes.Status403Forbidden)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized )]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    public async Task<ActionResult<APIResponse>> GetVillas()
+    public async Task<ActionResult<APIResponse>> GetVillas([FromQuery(Name = "filterOccupancy")]int? occupancy)
     {
         try
         {
-            IEnumerable<Villa> villaList = await _dbVilla.GetAllAsync();
+            IEnumerable<Villa> villaList;
+
+            if (occupancy > 0)
+            {
+                villaList = await _dbVilla.GetAllAsync(u => u.Occupancy == occupancy);
+            }
+            else
+            {
+                villaList = await _dbVilla.GetAllAsync();
+            }
+            
             _response.Result = _mapper.Map<List<VillaDTO>>(villaList);
             _response.StatusCode = HttpStatusCode.OK;
             return Ok(_response);
@@ -57,6 +68,7 @@ public class VillaAPIController : ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    // [ResponseCache(Location = ResponseCacheLocation.None, NoStore = true)]
     public async Task<ActionResult<APIResponse>> GetVilla(int id)
     {
         try
