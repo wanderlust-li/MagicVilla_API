@@ -29,6 +29,12 @@ public class VillaNumberAPIController : ControllerBase
         _dbVilla = dbVilla;
     }
     
+    [HttpGet("GetString")]
+    public IEnumerable<string> Get()
+    {
+        return new string[] { "value1", "value2" };
+    }
+    
     [HttpGet]
     // [MapToApiVersion("1.0")]
     [ProducesResponseType(StatusCodes.Status200OK)]
