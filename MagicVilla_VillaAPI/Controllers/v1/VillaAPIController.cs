@@ -33,7 +33,8 @@ public class VillaAPIController : ControllerBase
     [ProducesResponseType(StatusCodes.Status403Forbidden)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized )]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    public async Task<ActionResult<APIResponse>> GetVillas([FromQuery(Name = "filterOccupancy")]int? occupancy)
+    public async Task<ActionResult<APIResponse>> GetVillas([FromQuery(Name = "filterOccupancy")]int? occupancy,
+        [FromQuery]string? search, int pageSize = 2, int pageNumber = 1)
     {
         try
         {
@@ -41,11 +42,17 @@ public class VillaAPIController : ControllerBase
 
             if (occupancy > 0)
             {
-                villaList = await _dbVilla.GetAllAsync(u => u.Occupancy == occupancy);
+                villaList = await _dbVilla.GetAllAsync(u => u.Occupancy == occupancy, pageSize: pageSize,
+                    pageNumber: pageNumber);
             }
             else
             {
                 villaList = await _dbVilla.GetAllAsync();
+            }
+
+            if (!string.IsNullOrEmpty(search))
+            {
+                villaList = villaList.Where(u=>u.Name.ToLower().Contains(search));
             }
             
             _response.Result = _mapper.Map<List<VillaDTO>>(villaList);
