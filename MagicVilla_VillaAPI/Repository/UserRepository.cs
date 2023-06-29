@@ -82,19 +82,37 @@ public class UserRepository : IUserRepository
         return loginResponseDto;
     }
 
-    public async Task<LocalUser> Register(RegisterationRequestDTO registerationRequestDTO)
+    public async Task<UserDTO> Register(RegisterationRequestDTO registerationRequestDTO)
     {
-        LocalUser user = new LocalUser()
+        ApplicationUser user = new ApplicationUser()
         {
             UserName = registerationRequestDTO.UserName,
-            Password = registerationRequestDTO.Password,
-            Name = registerationRequestDTO.Name,
-            Role = registerationRequestDTO.Role
+            Email = registerationRequestDTO.UserName,
+            NormalizedEmail = registerationRequestDTO.UserName.ToUpper(),
+            Name = registerationRequestDTO.Name
+            // Role = registerationRequestDTO.Role
         };
 
-        _db.LocalUsers.Add(user);
-        await _db.SaveChangesAsync();
-        user.Password = "";
-        return user;
+        try
+        {
+            var result = await _userManager.CreateAsync(user, registerationRequestDTO.Password);
+            if (result.Succeeded)
+            {
+                await _userManager.AddToRoleAsync(user, "admin");
+                var userToReturn = _db.ApplicationUsers
+                    .FirstOrDefault(u => u.UserName == registerationRequestDTO.UserName);
+                return _mapper.Map<UserDTO>(userToReturn);
+            }
+        }
+        catch (Exception ex)
+        {
+            
+        }
+
+        return new UserDTO();
+        // _db.LocalUsers.Add(user);
+        // await _db.SaveChangesAsync();
+        // user.Password = "";
+        // return user;
     }
 }
