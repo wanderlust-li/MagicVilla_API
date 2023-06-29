@@ -129,11 +129,11 @@
             },
             "Microsoft.AspNetCore.Mvc.Versioning": {
               "target": "Package",
-              "version": "[5.1.0, )"
+              "version": "[4.2.0, )"
             },
             "Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer": {
               "target": "Package",
-              "version": "[5.1.0, )"
+              "version": "[4.1.1, )"
             },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
@@ -243,6 +243,10 @@
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[12.0.1, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[7.0.5, )"
             }
           },
           "imports": [

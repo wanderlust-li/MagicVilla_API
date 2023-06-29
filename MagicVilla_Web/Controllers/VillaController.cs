@@ -42,6 +42,7 @@ public class VillaController : Controller
         return View();
     }
 
+    [Authorize(Roles = "admin")]
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> CreateVilla(VillaCreateDTO model)
@@ -60,7 +61,7 @@ public class VillaController : Controller
         return View(model);
     }
 
-
+    [Authorize(Roles = "admin")]
     public async Task<IActionResult> UpdateVilla(int villaId)
     {
         var response = await _villaService.GetAsync<APIResponse>(villaId, HttpContext.Session.GetString(SD.SessionToken));

@@ -67,7 +67,7 @@ public class UserRepository : IUserRepository
         {
             Subject = new ClaimsIdentity(new Claim[]
             {
-                new Claim(ClaimTypes.Name, user.Id.ToString()),
+                new Claim(ClaimTypes.Name, user.UserName.ToString()),
                 new Claim(ClaimTypes.Role, roles.FirstOrDefault())
             }),
             Expires = DateTime.UtcNow.AddDays(7),
@@ -79,7 +79,7 @@ public class UserRepository : IUserRepository
         {
             Token = tokenHandler.WriteToken(token),
             User = _mapper.Map<UserDTO>(user),
-            Role = roles.FirstOrDefault()
+            // Role = roles.FirstOrDefault()
         };
 
         return loginResponseDto;
@@ -111,7 +111,7 @@ public class UserRepository : IUserRepository
                     .FirstOrDefault(u => u.UserName == registerationRequestDTO.UserName);
                 return _mapper.Map<UserDTO>(userToReturn);
             }
-        }
+        } 
         catch (Exception ex)
         {
             
